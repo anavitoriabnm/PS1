@@ -1,13 +1,13 @@
 from datetime import datetime
 
-def calcular_idade_da_lua(dia, mes, ano):
+def calcular_idade_da_lua(dia, mês, ano):
     if 1900 <= ano < 2000:
         C = 19
     elif 2000 <= ano < 2100:
         C = 20
     else:
         raise ValueError("Ano fora do intervalo suportado (1900-2099)")
-    data = datetime(ano, mes, dia)
+    data = datetime(ano, mês, dia)
     dia_do_ano = data.timetuple().tm_yday
 
     idlua = (dia_do_ano + ano + (ano // 4) + C) % 30
